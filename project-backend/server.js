@@ -5,7 +5,6 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const apiRoutes = require('./routes/api');
-const contactRoutes = require('./routes/contact');
 require('dotenv').config();
 
 const app = express();
@@ -245,7 +244,6 @@ app.use('/api', (req, res, next) => {
 
 // Root route
 app.use('/api', apiRoutes);
-app.use('/', contactRoutes);
 app.get('/', (req, res) => {
   res.json({ 
     success: true, 
